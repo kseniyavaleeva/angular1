@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="SampleApp">
+
+<head>
+<script src="angular-1.5.8\angular.js"></script>
+<link href="bootstrap.css" rel="stylesheet"/>
+<link href="bootstrap-theme.css" rel="stylesheet"/>
+<script>
+var app=angular.module("SampleApp",[]);
+app.controller("SampleCtrl", function ($scope){
+$scope.items=[{name: "Item 1", value: "value 1"},
+			{name: "Item 2", value: "value 2"},
+			{name: "Item 3", value: "value 3"},
+			{name: "Item 4", value: "value 4"},
+			{name: "Item 5", value: "value 5"}];
+});
+</script>
+<style>
+.class1{
+background-color:lightgreen;
+}
+.class2{
+background-color:lightblue;
+}
+</style>
+</head>
+<body>
+<div ng-controller="SampleAppCtrl">
+<div ng-controller="SampleCtrl">
+<h3 class="panel-header"> Items</h3>
+<table class="table">
+<thead>
+<tr>
+<th>#</th>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tr ng-repeat="Item in items">
+<td>
+{{$index+1}}
+<span ng-if="$first" class="class1">First</span>
+<span ng-if="$last" class="class2">Last</span>
+</td>
+<td>{{item.name}}</td>
+<td>{{item.value}}</td>
+</tr>
+</table>
+</div>
+</div>
+</body>
+</html>

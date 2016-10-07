@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="SampleApp">
+
+<head>
+<script src="../angular-1.5.8/angular.js"></script>
+<link href="bootstrap.css" rel="stylesheet"/>
+<link href="bootstrap-theme.css" rel="stylesheet"/>
+<script>
+var app=angular.module("SampleApp",[]);
+app.controller("SampleCtrl", function ($scope){
+$scope.firstName="Ivan";
+$scope.lastName="Ivanov";
+$scope.age="25";
+$scope.position="Software Developer";
+});
+</script>
+</head>
+<body ng-controller="SampleAppCtrl">
+<h3 ng-cloak> {{firstName}} {{lastName}}</h3>
+<p ng-cloak> age:{{age}}</p>
+<p> position{{position}}</p>
+<script> alert("message")</script>
+</div>
+</body>
+</html>
